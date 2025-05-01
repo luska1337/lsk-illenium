@@ -9,14 +9,9 @@ function Illenium:Create(source, title, type, hasBlip, coords, hasPermission)
     local heading = GetEntityHeading(GetPlayerPed(source))
     local formatCoords = string.format("[%.2f,%.2f,%.2f,%.2f]", coords.x, coords.y, coords.z, heading)
 
-    local formatPermission = nil
-    if hasPermission and hasPermission ~= "" then
-        if type == "gang" then
-            formatPermission = json.encode({ gang = hasPermission })
-        else
-            formatPermission = json.encode({ job = hasPermission })
-        end
-    end
+    local formatPermission =  (hasPermission and hasPermission ~= "") and json.encode({
+        [type == 'gang' and 'gang' or 'job'] = hasPermission
+      }) or nil
 
     exports.oxmysql:query_async("INSERT INTO illenium_shops (label, type, coords, blip, groups) VALUES (?, ?, ?, ?, ?)", { title, type, formatCoords, hasBlip, formatPermission })
 
@@ -80,6 +75,7 @@ function Illenium:Init()
                 type = row.type,
                 coords = json.decode(row.coords),
                 hasBlip = row.blip == 1,
+                hasPermission = row.groups and json.decode(row.groups) or false,
                 default = row.locked == 1
             }
             
@@ -118,6 +114,8 @@ lib.callback.register('lsk-illenium:server:loadPlayer', function(source)
     for i = 1, #Illenium.cachedShops do
         TriggerClientEvent('illenium-appearance:Add', source, Illenium.cachedShops[i])
     end
+    Wait(10)
+    TriggerClientEvent('illenium-appearance:Blips', source)
 end)
 
 -- INIT SYSTEM
