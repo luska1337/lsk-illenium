@@ -1,0 +1,45 @@
+{
+    "HELP": "Create clothing shop/barbershop/tattoo parlor",
+    "LOADED": "Loaded %s shops in the system...",
+    "NOT_ENOUGHT": "There are no shops to load...",
+    "LABELS": {
+        "SkinshopIcon": "👕",
+        "BarberIcon": "💈",
+        "TattooIcon": "✒",
+        "SurgeonIcon": "💉",
+        "Skinshop": "Clothing Shop",
+        "Barber": "Barbershop",
+        "Tattoo": "Tattoo Studio",
+        "Surgeon": "Plastic Surgery"
+    },
+    "MENUS": {
+        "CONTEXT": {
+            "TITLE": "Illenium Features",
+            "CREATE": "Create new shop",
+            "CREATE_DESCRIPTION": "Create a new shop",
+            "DELETE": "Delete",
+            "DELETE_DESCRIPTION": "Delete the selected shop",
+            "TELEPORT": "Teleport",
+            "TELEPORT_DESCRIPTION": "Teleport to the selected shop",
+            "BACK": "Back"
+        },
+        "DIALOG": {
+            "TITLE": "Create new shop",
+            "LABEL": "Shop title",
+            "LABEL_DESCRIPTION": "Enter the shop title (If empty, default will be: %s)",
+            "TYPE": "Shop type",
+            "TYPE_DESCRIPTION": "Select the type of shop you want to create",
+            "BLIP": "Map marker",
+            "BLIP_DESCRIPTION": "Select if you want to add a map marker for this shop",
+            "GROUPS": "Groups",
+            "GROUPS_DESCRIPTION": "Select if you want to restrict the shop to a specific job or gang"
+        }
+    },
+    "DEFAULT_LABEL": "No Title",
+    "NOTIFICATIONS": {
+        "TITLE": "Illenium Features",
+        "SUCCESS": "Shop created successfully!",
+        "ERROR": "Error creating shop...",
+        "DELETE": "Shop with ID: %s was successfully deleted!"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "HELP": "Criar loja de roupas/barbearia/tatuagem",
+    "LOADED": "Foram carregadas %s lojas no sistema...",
+    "NOT_ENOUGHT": "Não existem lojas para serem carregadas...",
+    "LABELS": {
+        "SkinshopIcon": "👕",
+        "BarberIcon": "💈",
+        "TattooIcon": "✒",
+        "SurgeonIcon": "💉",
+        "Skinshop": "Loja de Roupas",
+        "Barber": "Barbearia",
+        "Tattoo": "Estúdio de Tatuagem",
+        "Surgeon": "Cirúrgia Plástica"
+    },
+    "MENUS": {
+        "CONTEXT": {
+            "TITLE": "Illenium Features",
+            "CREATE": "Criar nova loja",
+            "CREATE_DESCRIPTION": "Crie uma nova loja",
+            "DELETE": "Deletar",
+            "DELETE_DESCRIPTION": "Deleta a loja selecionada",
+            "TELEPORT": "Teleportar",
+            "TELEPORT_DESCRIPTION": "Teleportar para a loja selecionada",
+            "BACK": "Voltar"
+        },
+        "DIALOG": {
+            "TITLE": "Criar nova loja",
+            "LABEL": "Título da loja",
+            "LABEL_DESCRIPTION": "Escreva o título da loja (Caso não haja, o padrão será: %s)",
+            "TYPE": "Tipo de loja",
+            "TYPE_DESCRIPTION": "Selecione o tipo de loja que deseja criar",
+            "BLIP": "Marcação no mapa",
+            "BLIP_DESCRIPTION": "Selecione caso queira adicionar uma marcação no mapa desta loja",
+            "GROUPS": "Grupos",
+            "GROUPS_DESCRIPTION": "Selecione caso queira limitar a loja para um emprego ou gangue especifico"
+        }
+    },
+    "DEFAULT_LABEL": "Sem Título",
+    "NOTIFICATIONS": {
+        "TITLE": "Illenium Features",
+        "SUCCESS": "Loja criada com sucesso!",
+        "ERROR": "Erro ao criar a loja...",
+        "DELETE": "Loja com o ID: %s foi deletada com sucesso!"
+    }
+}
