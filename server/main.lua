@@ -5,7 +5,6 @@ local Illenium = {
 
 function Illenium:Create(source, title, type, hasBlip, coords, hasPermission)
     if not Functions.isAdmin(source, Config.Permissions.Create) then return end
-    local userId = Functions.getUserId(source)
 
     local heading = GetEntityHeading(GetPlayerPed(source))
     local formatCoords = string.format("[%.2f,%.2f,%.2f,%.2f]", coords.x, coords.y, coords.z, heading)
@@ -49,7 +48,6 @@ end
 
 function Illenium:Delete(source, id)
     if not Functions.isAdmin(source, Config.Permissions.Delete) then return end
-    local userId = Functions.getUserId(source)
 
     for i = 1, #Illenium.cachedShops do
         if Illenium.cachedShops[i].shopsId == id then
