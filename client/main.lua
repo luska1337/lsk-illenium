@@ -92,13 +92,13 @@ function Illenium:Shops(List)
 
             lib.registerContext({
                 id = 'shop_' .. shop.shopsId,
-                title = '[' .. Illenium:GetIcon(shop.type) .. '] ' .. shop.label .. ' (ID: ' .. shop.shopsId .. ')',
+                title = ('[%s] %s (ID: %s)'):format(Illenium:GetIcon(shop.type), shop.label, shop.shopsId),
                 options = shopOptions
             })
 
             options[#options + 1] = {
-                title = '#' .. shop.shopsId .. ' ' .. Illenium:GetLabel(shop.type),
-                description = '[' .. Illenium:GetIcon(shop.type) .. '] ' .. shop.label,
+                title = ('#%s %s'):format(shop.shopsId, Illenium:GetLabel(shop.type)),
+                description = ('[%s] %s'):format(Illenium:GetIcon(shop.type), shop.label),
                 onSelect = function()
                     lib.showContext('shop_' .. shop.shopsId)
                 end
