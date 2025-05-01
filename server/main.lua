@@ -38,7 +38,7 @@ end
 function Illenium:Teleport(source, coords)
     if not Functions.isAdmin(source, Config.Permissions.Create) then return end
 
-    TriggerClientEvent('QBCore:Command:TeleportToCoords', source, coords[1], coords[2], coords[3])
+    SetEntityCoords(GetPlayerPed(source), coords[1], coords[2], coords[3])
 end
 
 function Illenium:Delete(source, id)
