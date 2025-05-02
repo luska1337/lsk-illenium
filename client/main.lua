@@ -10,17 +10,17 @@ local typeOptions = {
 }
 
 function Illenium:GetLabel(value)
-    for _, option in ipairs(typeOptions) do
-        if option.value == value then
-            return option.label
+    for i = 1, #typeOptions do
+        if typeOptions[i].value == value then
+            return typeOptions[i].label
         end
     end
 end
 
 function Illenium:GetIcon(value)
-    for _, option in ipairs(typeOptions) do
-        if option.value == value then
-            return option.icon
+    for i = 1, #typeOptions do
+        if typeOptions[i].value == value then
+            return typeOptions[i].icon
         end
     end
 end
