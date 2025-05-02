@@ -62,6 +62,23 @@ function Illenium:Init()
     self.cachedShops = {}
     self.shopsId = 0
     
+    exports.oxmysql:query_async([[
+    CREATE TABLE IF NOT EXISTS `illenium_shops` (
+        `id` INT NOT NULL AUTO_INCREMENT,
+        `label` VARCHAR(30) DEFAULT 'No Name',
+        `type` VARCHAR(50) DEFAULT 'clothing',
+        `coords` LONGTEXT DEFAULT '[0.0,0.0,0.0]',
+        `blip` TINYINT(1) DEFAULT 0,
+        `locked` TINYINT(1) DEFAULT 0,
+        `groups` VARCHAR(50) DEFAULT NULL,
+        PRIMARY KEY (`id`)
+    )
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_unicode_ci
+    ENGINE=InnoDB;
+    ]])
+    Wait(10)
+
     local shopList = exports.oxmysql:query_async("SELECT * FROM illenium_shops ORDER BY id DESC")
 
     if shopList and #shopList > 0 then
