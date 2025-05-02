@@ -33,14 +33,14 @@ function Illenium:GetGroups()
 
     for name, data in pairs(jobs or {}) do
         options[#options + 1] = {
-            value = name,
+            value = "job:" .. name,
             label = string.format("%s (job)", data.label or name)
         }
     end
 
     for name, data in pairs(gangs or {}) do
         options[#options + 1] = {
-            value = name,
+            value = "gang:" .. name,
             label = string.format("%s (gang)", data.label or name)
         }
     end
@@ -151,7 +151,9 @@ function Illenium:CreateShop()
         local title = (input[1] and input[1] ~= "") and input[1] or locale('DEFAULT_LABEL')
         local type = input[2]
         local hasBlip = input[3] or false
-        local hasPermission = input[4] or false
+        local groupType, groupName = (input[4] or ""):match("^(%w+):(.+)$")
+        local hasPermission = groupType and groupName and { [groupType] = groupName } or nil
+
         lib.callback.await('lsk-illenium:server:Options', true, 'Create', title, type, hasBlip, coords, hasPermission)
     else
         Functions.notify(locale('NOTIFICATIONS.TITLE'), locale('NOTIFICATIONS.ERROR'), 'error', 15000)

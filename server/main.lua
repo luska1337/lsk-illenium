@@ -9,9 +9,7 @@ function Illenium:Create(source, title, type, hasBlip, coords, hasPermission)
     local heading = GetEntityHeading(GetPlayerPed(source))
     local formatCoords = string.format("[%.2f,%.2f,%.2f,%.2f]", coords.x, coords.y, coords.z, heading)
 
-    local formatPermission =  (hasPermission and hasPermission ~= "") and json.encode({
-        [type == 'gang' and 'gang' or 'job'] = hasPermission
-      }) or nil
+    local formatPermission = (hasPermission and hasPermission ~= "") and json.encode(hasPermission) or nil
 
     exports.oxmysql:query_async("INSERT INTO illenium_shops (label, type, coords, blip, groups) VALUES (?, ?, ?, ?, ?)", { title, type, formatCoords, hasBlip, formatPermission })
 
@@ -68,8 +66,8 @@ function Illenium:Init()
         `label` VARCHAR(30) DEFAULT 'No Name',
         `type` VARCHAR(50) DEFAULT 'clothing',
         `coords` LONGTEXT DEFAULT '[0.0,0.0,0.0]',
-        `blip` TINYINT(1) DEFAULT 0,
-        `locked` TINYINT(1) DEFAULT 0,
+        `blip` INT(5) DEFAULT 0,
+        `locked` INT(5) DEFAULT 0,
         `groups` VARCHAR(50) DEFAULT NULL,
         PRIMARY KEY (`id`)
     )
