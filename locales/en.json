@@ -2,6 +2,7 @@
     "HELP": "Create clothing shop/barbershop/tattoo parlor",
     "LOADED": "Loaded %s shops in the system...",
     "NOT_ENOUGHT": "There are no shops to load...",
+    "CONVERT": "Converted %s shops from illenium-appearance!",
     "LABELS": {
         "SkinshopIcon": "👕",
         "BarberIcon": "💈",

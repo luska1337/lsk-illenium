@@ -2,6 +2,7 @@
     "HELP": "Criar loja de roupas/barbearia/tatuagem",
     "LOADED": "Foram carregadas %s lojas no sistema...",
     "NOT_ENOUGHT": "Não existem lojas para serem carregadas...",
+    "CONVERT": "Convertidas %s lojas do illenium-appearance!",
     "LABELS": {
         "SkinshopIcon": "👕",
         "BarberIcon": "💈",
